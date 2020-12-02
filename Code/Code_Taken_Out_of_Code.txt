@@ -1,0 +1,4 @@
+Code Taken out of code:
+
+<div class="fakeimg" style="height:200px;">(Title or Author)</div>
+<div class="fakeimg" style="height:200px;">(Review of book)</div>
