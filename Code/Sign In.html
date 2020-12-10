@@ -86,6 +86,7 @@ function loginUser(username, password){
 	const validUser     = username == registeredUser;
 	const validPassword = password == registeredPassword;
 
+//validation of login
 	if(validUser && validPassword){
     window.open('Home.html', "_self");
 		return `User ${username} successfully logged-in!`;
