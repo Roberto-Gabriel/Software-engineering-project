@@ -1,33 +1,32 @@
-<!--page initialisation-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Book Tracker</title>
+<title>Book Tracker - Home</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
 
-<!--website banner-->
 <div class="header">
   <h1>Book Tracker</h1>
   <p>A website created to track your reading.</p>
 </div>
-
-<!--top navigation bar-->  
+<!-- Navigation Var -->
 <div class="navbar">
   <a href="Home.html">Home</a>
+  <a href="Book Reviews.html">Reviews</a>
   <a href="Wish List.html">Wish List</a>
   <a href="Most Popular Books.html">Most Popular Books</a>
+  <a href="Sign In.html" class="right">Sign out</a>
 </ul>
 </div>
 
-<!--left hand navigation section-->  
 <div class="row">
   <div class="side">
     <h2>Book Search</h2>
     <h5>Enter Title or Author of book below:</h5>
+    <!-- Book Search -->
     <form action="Home.html">
       <textarea id="bookSearch" name="bookSearch" placeholder="(Title or Authors Name)" rows="6" cols="40" ></textarea> 
       <br><br>
@@ -36,30 +35,64 @@
     <p></p>
     <h3>Popular Book Suggestions</h3>
     <p>Here is some of our most popular books!</p>
-    <div class="fakeimg" style="height:60px;">Harry Potter and the Sorcerer's Stone</div><br>
-    <div class="fakeimg" style="height:60px;">Lord of the Rings</div><br>
-    <div class="fakeimg" style="height:60px;">Pinocchio</div>
+    <!-- Book Suggestions -->
+    <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/yxvjhlbl">Harry Potter and the Sorcerer's Stone</a></div><br>
+    <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/y5x4p886">Lord of the Rings</a></div><br>
+    <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/y3ablwwb">Pinocchio</a></div>
   </div>
-  
-  <!--main review pane-->
   <div class="main">
     <h2>Book Review</h2>
     <h5>Write a review in the box below:</h5>
-    <form action="/action_page.php">
-      <textarea id="title" name="title" placeholder="(Enter Book Title)" rows="1" cols="100"></textarea>
-        <br><br>
-      <textarea id="bookReview" name="bookReview" placeholder="(Review of Book)" rows="30" cols="100"></textarea>
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
+    <!-- Post Book Review -->
+    <form id="post-form" action="submit">
+
+      <div>
+        <textarea id="title" type="text" name="title" placeholder="(Title of book)" rows="1" cols="100" required></textarea>
+      </div>
+      <div>
+        <textarea id="password" type="password" name="password" placeholder="(Content of review)" rows="30" cols="100" required></textarea>
+      </div>
+    
+    <input type="submit" value="Submit" />
+  
+    <output name="result"></output>
+  </form>
     <p></p>
     <p></p>
     <br>
+    <script>
+      window.addEventListener("DOMContentLoaded", setupForm);
+    //setupForm
+    function setupForm(){
+      const form = document.getElementById("post-form");
+      form.addEventListener("submit", handleSubmit);
+    }
     
+    function handleSubmit(event){
+      event.preventDefault();
+    
+      const {
+        title,
+        password,
+        login_type,
+        result
+      } = event.target;
+    //handleSubmit
+      const processUser = postUser;
+      const response    = processUser(title.value, password.value);
+      result.innerHTML  = response;
+    }
+    //postReview
+    function postUser(title, password){
+      window.localStorage.setItem("Login__title", title);
+      window.localStorage.setItem("Login__content", password);
+    
+      return `${title} review has been posted!`;
+    }
+    </script>
   </div>
 </div>
 
-<!--page footer banner-->  
 <div class="footer">
   <h2>Footer</h2>
   <h5>Thank you for visiting our website!</h5>

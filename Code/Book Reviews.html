@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Book Tracker - WishList</title>
+<title>Book Tracker - Reviews</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="Style.css">
@@ -14,11 +14,11 @@
 </div>
 <!-- Navigation Var -->
 <div class="navbar">
-  <a href="Home.html">Home</a>
-  <a href="Book Reviews.html">Reviews</a>
-  <a href="Wish List.html">Wish List</a>
-  <a href="Most Popular Books.html">Most Popular Books</a>
-  <a href="Sign In.html" class="right">Sign out</a>
+    <a href="Home.html">Home</a>
+    <a href="Book Reviews.html">Reviews</a>
+    <a href="Wish List.html">Wish List</a>
+    <a href="Most Popular Books.html">Most Popular Books</a>
+    <a href="Sign In.html" class="right">Sign out</a>
 </ul>
 </div>
 
@@ -41,19 +41,35 @@
     <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/y3ablwwb">Pinocchio</a></div>
   </div>
   <div class="main">
-    <h2>Wish List</h2>
-    <h5>Your Wish List is below:</h5>
-    <!-- Wish List -->
-    <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/yxawcb4j">The Sentinel</a></div><br>
-    <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/y2dy9ksf">Ready Player Two</a></div><br>
-    <div class="fakeimg" style="height:60px;"><a href="https://tinyurl.com/yxdhewwc">The Law of Innocence</a></div>
-  </div>
+    <h2>Book Reviews</h2>
+    <h5>Click the button below to load reviews:</h5>
+    <!-- Read posts -->
+    <div id="result"></div>
+    <div id="result2"></div>
+    <form id="read-reviews" action="submit">
+      <script>
+        for (var i = 0; i < localStorage.length; i++){
+          document.getElementById("result").innerHTML = window.localStorage.getItem("Login__title");
+        document.getElementById("result2").innerHTML = window.localStorage.getItem("Login__content");
+        }
+      </script>
+    </form>
     <p></p>
     <p></p>
     <br>
+    <script>
     
+    </script>
   </div>
 </div>
+
+<script>
+
+  function getPost(){
+  constindow.localStorage.getItem("Login__username");
+  }
+
+</script>
 
 <div class="footer">
   <h2>Footer</h2>
