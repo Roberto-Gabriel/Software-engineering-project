@@ -14,10 +14,10 @@
 </div>
 
 <div class="navbar">
-  <a href="Home.html">Home</a>
-  <a href="Book Reviews.html">Reviews</a>
-  <a href="Wish List.html">Wish List</a>
-  <a href="Most Popular Books.html">Most Popular Books</a>
+    <a href="Home.html">Home</a>
+    <a href="Book Reviews.html">Reviews</a>
+    <a href="Wish List.html">Wish List</a>
+    <a href="Most Popular Books.html">Most Popular Books</a>
 </ul>
 </div>
 
@@ -25,6 +25,7 @@
   <div class="side">
     <h2>Book Search</h2>
     <h5>Enter Title or Author of book below:</h5>
+    <!-- Book Search -->
     <form action="Home.html">
       <textarea id="bookSearch" name="bookSearch" placeholder="(Title or Authors Name)" rows="6" cols="40" ></textarea> 
       <br><br>
@@ -33,23 +34,41 @@
     <p></p>
     <h3>Popular Book Suggestions</h3>
     <p>Here is some of our most popular books!</p>
+    <!-- Book Suggestions -->
     <div class="fakeimg" style="height:60px;">Harry Potter and the Sorcerer's Stone</div><br>
     <div class="fakeimg" style="height:60px;">Lord of the Rings</div><br>
     <div class="fakeimg" style="height:60px;">Pinocchio</div>
   </div>
   <div class="main">
-    <h2>Wish List</h2>
-    <h5>Your Wish List is below:</h5>
-    <div class="fakeimg" style="height:60px;">(Book Name)</div><br>
-    <div class="fakeimg" style="height:60px;">(Book Name)</div><br>
-    <div class="fakeimg" style="height:60px;">(Book Name)</div>
-  </div>
+    <h2>Book Reviews</h2>
+    <h5>Click the button below to load reviews:</h5>
+    <!-- Read posts -->
+    <div id="result"></div>
+    <div id="result2"></div>
+    <form id="read-reviews" action="submit">
+      <script>
+        for (var i = 0; i < localStorage.length; i++){
+          document.getElementById("result").innerHTML = window.localStorage.getItem("Login__title");
+        document.getElementById("result2").innerHTML = window.localStorage.getItem("Login__content");
+        }
+      </script>
+    </form>
     <p></p>
     <p></p>
     <br>
+    <script>
     
+    </script>
   </div>
 </div>
+
+<script>
+
+  function getPost(){
+  constindow.localStorage.getItem("Login__username");
+  }
+
+</script>
 
 <div class="footer">
   <h2>Footer</h2>

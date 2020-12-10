@@ -20,6 +20,7 @@
 
 <div class="row">
   <div class="main">
+    <!-- Login/Register User -->
     <form id="login-form" action="submit">
       
         <h1>User Details</h1>
@@ -31,7 +32,6 @@
           <label for="password">Password: </label>
           <input id="password" type="password" name="password" required />
         </div>
-      
       <fieldset>
         <legend><h4>Login Type</h4></legend>
         <span>
@@ -51,11 +51,11 @@
 </div>
 <script>
   window.addEventListener("DOMContentLoaded", setupForm);
-
+//setupForm
 function setupForm(){
 	const form = document.getElementById("login-form");
 	form.addEventListener("submit", handleSubmit);
-}//setupForm
+}
 
 function handleSubmit(event){
 	event.preventDefault();
@@ -66,19 +66,19 @@ function handleSubmit(event){
 		login_type,
 		result
 	} = event.target;
-
+//handleSubmit
 	const processUser = login_type.value == "register" ? registerUser : loginUser;
 	const response    = processUser(username.value, password.value);
 	result.innerHTML  = response;
-}//handleSubmit
-
+}
+//registerUser
 function registerUser(username, password){
 	window.localStorage.setItem("Login__username", username);
 	window.localStorage.setItem("Login__password", password);
 
 	return `New user ${username} now registered!`;
-}//registerUser
-
+}
+//loginUser
 function loginUser(username, password){
 	const registeredUser     = window.localStorage.getItem("Login__username");
 	const registeredPassword = window.localStorage.getItem("Login__password");
@@ -87,12 +87,12 @@ function loginUser(username, password){
 	const validPassword = password == registeredPassword;
 
 	if(validUser && validPassword){
-    window.open('Home.html', 'newwindow');
+    window.open('Home.html', "_self");
 		return `User ${username} successfully logged-in!`;
 	}
         else if(!validUser)     return `Username ${username} has not been registered. `;
 	else if(!validPassword) return `Incorrect password for username ${username}`;
-}//loginUser
+}
 </script>
 </body>
 </html>
