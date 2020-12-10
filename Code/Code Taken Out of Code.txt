@@ -1,0 +1,53 @@
+Code Taken out of code:
+
+<div class="fakeimg" style="height:200px;">(Title or Author)</div>
+<div class="fakeimg" style="height:200px;">(Review of book)</div>
+
+
+SIGN IN PAGE:
+  <div class="side">
+    <h2>Book Search</h2>
+    <h5>Enter Title or Author of book below:</h5>
+    <form action="/action_page.php">
+      <textarea id="bookSearch" name="bookSearch" placeholder="(Title or Authors Name)" rows="6" cols="40" ></textarea> 
+      <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    <p></p>
+    <h3>Popular Book Suggestions</h3>
+    <p>Here is some of our most popular books!</p>
+    <div class="fakeimg" style="height:60px;">Harry Potter and the Sorcerer's Stone</div><br>
+    <div class="fakeimg" style="height:60px;">Lord of the Rings</div><br>
+    <div class="fakeimg" style="height:60px;">Pinocchio</div>
+  </div>
+
+<form method="get" action="Home.html">
+      <textarea id="email" name="email" placeholder="(Enter Email)" rows="1" cols="100"></textarea>
+        <br><br>
+        <textarea id="password" name="password" placeholder="(Enter Password)" rows="1" cols="100"></textarea>
+        <br><br>
+        <button type="submit" class="btn" name="ved_submit">View or Delete</button>
+      </form>
+
+HOME PAGE:
+<fieldset>
+      <legend><h4></h4></legend>
+      <span>
+        <input id="post" type="radio" name="login_type" value="post" checked="checked">
+        <label for="post">Post</label>
+      </span>
+      
+    </fieldset>
+
+BOOK REVIEWS:
+for (var i = 0; i < localStorage.length; i++){
+        localStorage.getItem(localStorage.key(i));
+    }
+
+  MOST POPULAR BOOKS PAGE:
+  <p></p>
+    <h3>Popular Book Suggestions</h3>
+    <p>Here is some of our most popular books!</p>
+    <div class="fakeimg" style="height:60px;">Harry Potter and the Sorcerer's Stone</div><br>
+    <div class="fakeimg" style="height:60px;">Lord of the Rings</div><br>
+    <div class="fakeimg" style="height:60px;">Pinocchio</div>
